@@ -1,10 +1,12 @@
 package com.yigitcanozturk.mvvmlivenews.model;
 
 public class News {
+
     String title;
     String description;
     String url;
     String address;
+
     News(String title,String description,String url,String address){
         this.title = title;
         this.description = description;
