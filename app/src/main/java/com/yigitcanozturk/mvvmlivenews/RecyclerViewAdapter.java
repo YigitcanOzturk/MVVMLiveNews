@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.squareup.picasso.Picasso;
 import com.yigitcanozturk.mvvmlivenews.model.News;
 
 import java.util.ArrayList;
@@ -39,6 +41,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
         viewHolder.txtTitle.setText(news.getTitle());
         viewHolder.txtDescription.setText(news.getDescription());
+        Picasso.with(context).load(news.getUrlToImage()).into(viewHolder.imageView);
     }
 
     @Override
