@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 public class News {
 
     @SerializedName("source")
-    private SourceModel source;
+    private NewsSourceModel source;
     @SerializedName("author")
     private String author;
     @SerializedName("title")
@@ -20,10 +20,10 @@ public class News {
     private String publishedAt;
 
 
-    public SourceModel getSource() {
+    public NewsSourceModel getSource() {
         return source;
     }
-    public void setSource(SourceModel source) {
+    public void setSource(NewsSourceModel source) {
         this.source = source;
     }
     public String getAuthor() {

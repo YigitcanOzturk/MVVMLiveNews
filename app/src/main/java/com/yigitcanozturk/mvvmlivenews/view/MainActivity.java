@@ -1,4 +1,4 @@
-package com.yigitcanozturk.mvvmlivenews;
+package com.yigitcanozturk.mvvmlivenews.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
@@ -8,9 +8,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
-import com.yigitcanozturk.mvvmlivenews.adapters.NewsAdapter;
-import com.yigitcanozturk.mvvmlivenews.models.News;
-import com.yigitcanozturk.mvvmlivenews.viewmodels.NewsViewModel;
+import com.yigitcanozturk.mvvmlivenews.R;
+import com.yigitcanozturk.mvvmlivenews.adapter.NewsAdapter;
+import com.yigitcanozturk.mvvmlivenews.model.News;
+import com.yigitcanozturk.mvvmlivenews.viewmodel.NewsViewModel;
 
 import java.util.ArrayList;
 
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     MainActivity context;
     RecyclerView recyclerView;
-    NewsViewModel viewModel;
+    NewsViewModel newsViewModel;
     NewsAdapter newsAdapter;
 
     @Override
@@ -27,9 +28,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         context = this;
         recyclerView = findViewById(R.id.recyclerView);
-        viewModel = new ViewModelProvider(this).get(NewsViewModel.class);
-        viewModel.getUserMutableLiveData().observe(context, newsListUpdateObserver);
+        newsViewModel = new ViewModelProvider(this).get(NewsViewModel.class);
+        newsViewModel.getUserMutableLiveData().observe(context, newsListUpdateObserver);
     }
+
+
 
     Observer<ArrayList<News>> newsListUpdateObserver = new Observer<ArrayList<News>>() {
         @Override

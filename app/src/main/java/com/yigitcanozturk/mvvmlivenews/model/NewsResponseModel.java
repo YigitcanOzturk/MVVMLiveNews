@@ -1,10 +1,10 @@
-package com.yigitcanozturk.mvvmlivenews.models;
+package com.yigitcanozturk.mvvmlivenews.model;
 
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
 
-public class ResponseModel {
+public class NewsResponseModel {
     @SerializedName("status")
     private String status;
     @SerializedName("totalResults")

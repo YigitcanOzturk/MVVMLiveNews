@@ -1,8 +1,8 @@
-package com.yigitcanozturk.mvvmlivenews.models;
+package com.yigitcanozturk.mvvmlivenews.model;
 
 import com.google.gson.annotations.SerializedName;
 
-class SourceModel {
+class NewsSourceModel {
     @SerializedName("id")
     private String id;
     @SerializedName("name")

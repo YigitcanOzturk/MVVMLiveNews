@@ -1,6 +1,6 @@
-package com.yigitcanozturk.mvvmlivenews.interfaces;
+package com.yigitcanozturk.mvvmlivenews.service;
 
-import com.yigitcanozturk.mvvmlivenews.models.NewsResponseModel;
+import com.yigitcanozturk.mvvmlivenews.model.NewsResponseModel;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

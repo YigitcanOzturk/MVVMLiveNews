@@ -5,9 +5,9 @@ import androidx.lifecycle.ViewModel;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.yigitcanozturk.mvvmlivenews.interfaces.NewsAPI;
-import com.yigitcanozturk.mvvmlivenews.models.ResponseModel;
-import com.yigitcanozturk.mvvmlivenews.models.News;
+import com.yigitcanozturk.mvvmlivenews.service.NewsAPI;
+import com.yigitcanozturk.mvvmlivenews.model.NewsResponseModel;
+import com.yigitcanozturk.mvvmlivenews.model.News;
 
 import java.util.ArrayList;
 
@@ -17,16 +17,17 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class NewsViewModel extends ViewModel implements Callback<ResponseModel> {
+public class NewsViewModel extends ViewModel implements Callback<NewsResponseModel>{
 
     static final String BASE_URL = "https://newsapi.org/v2/";
+    static final String API_KEY = "588ca767d0ad4629b5d3b06d21e4c028";
 
     public MutableLiveData<ArrayList<News>> newsLiveData;
     ArrayList<News> newsArrayList;
     public NewsViewModel() {
         newsLiveData = new MutableLiveData<>();
 
-        // call your Rest API in init method
+        // we call the Rest API in init method
 
         init();
     }
@@ -47,12 +48,12 @@ public class NewsViewModel extends ViewModel implements Callback<ResponseModel> 
 
         NewsAPI newsAPI = retrofit.create(NewsAPI.class);
 
-        Call<ResponseModel> call = newsAPI.loadChanges("tr","588ca767d0ad4629b5d3b06d21e4c028");
+        Call<NewsResponseModel> call = newsAPI.loadChanges("tr",API_KEY);
         call.enqueue(this);
     }
 
     @Override
-    public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
+    public void onResponse(Call<NewsResponseModel> call, Response<NewsResponseModel> response) {
         if(response.body().getStatus().equals("ok")) {
             newsArrayList = new ArrayList<>();
             newsArrayList = response.body().getNews();
@@ -63,7 +64,7 @@ public class NewsViewModel extends ViewModel implements Callback<ResponseModel> 
     }
 
     @Override
-    public void onFailure(Call<ResponseModel> call, Throwable t) {
+    public void onFailure(Call<NewsResponseModel> call, Throwable t) {
         t.printStackTrace();
     }
 }
