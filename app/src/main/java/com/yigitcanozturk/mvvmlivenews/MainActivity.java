@@ -8,8 +8,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
-import com.yigitcanozturk.mvvmlivenews.model.News;
-import com.yigitcanozturk.mvvmlivenews.viewmodel.NewsViewModel;
+import com.yigitcanozturk.mvvmlivenews.adapters.NewsAdapter;
+import com.yigitcanozturk.mvvmlivenews.models.News;
+import com.yigitcanozturk.mvvmlivenews.viewmodels.NewsViewModel;
 
 import java.util.ArrayList;
 
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     MainActivity context;
     RecyclerView recyclerView;
     NewsViewModel viewModel;
-    RecyclerViewAdapter recyclerViewAdapter;
+    NewsAdapter newsAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +34,9 @@ public class MainActivity extends AppCompatActivity {
     Observer<ArrayList<News>> newsListUpdateObserver = new Observer<ArrayList<News>>() {
         @Override
         public void onChanged(final ArrayList<News> newsArrayList) {
-            recyclerViewAdapter = new RecyclerViewAdapter(context,newsArrayList);
+            newsAdapter = new NewsAdapter(context,newsArrayList);
             recyclerView.setLayoutManager(new LinearLayoutManager(context));
-            recyclerView.setAdapter(recyclerViewAdapter);
+            recyclerView.setAdapter(newsAdapter);
         }
     };
 }

@@ -1,4 +1,4 @@
-package com.yigitcanozturk.mvvmlivenews.model;
+package com.yigitcanozturk.mvvmlivenews.models;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -26,7 +26,7 @@ public class ResponseModel {
     public ArrayList<News> getNews() {
         return news;
     }
-    public void setNews(ArrayList<News> articles) {
+    public void setNews(ArrayList<News> news) {
         this.news = news;
     }
 }

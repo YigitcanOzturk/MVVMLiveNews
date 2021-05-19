@@ -1,4 +1,4 @@
-package com.yigitcanozturk.mvvmlivenews.model;
+package com.yigitcanozturk.mvvmlivenews.models;
 
 import com.google.gson.annotations.SerializedName;
 

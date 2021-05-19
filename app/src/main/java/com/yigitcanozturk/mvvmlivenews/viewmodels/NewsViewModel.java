@@ -6,8 +6,8 @@ import androidx.lifecycle.ViewModel;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.yigitcanozturk.mvvmlivenews.interfaces.NewsAPI;
-import com.yigitcanozturk.mvvmlivenews.model.ResponseModel;
-import com.yigitcanozturk.mvvmlivenews.model.News;
+import com.yigitcanozturk.mvvmlivenews.models.ResponseModel;
+import com.yigitcanozturk.mvvmlivenews.models.News;
 
 import java.util.ArrayList;
 

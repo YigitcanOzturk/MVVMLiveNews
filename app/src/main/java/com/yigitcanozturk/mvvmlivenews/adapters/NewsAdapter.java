@@ -1,4 +1,4 @@
-package com.yigitcanozturk.mvvmlivenews;
+package com.yigitcanozturk.mvvmlivenews.adapters;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -11,7 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
-import com.yigitcanozturk.mvvmlivenews.model.News;
+import com.yigitcanozturk.mvvmlivenews.R;
+import com.yigitcanozturk.mvvmlivenews.models.News;
 
 import java.util.ArrayList;
 
