@@ -1,18 +1,15 @@
 package com.yigitcanozturk.mvvmlivenews.viewmodel;
 
-import android.widget.Toast;
-
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.yigitcanozturk.mvvmlivenews.NewsAPI;
-import com.yigitcanozturk.mvvmlivenews.ResponseModel;
+import com.yigitcanozturk.mvvmlivenews.interfaces.NewsAPI;
+import com.yigitcanozturk.mvvmlivenews.model.ResponseModel;
 import com.yigitcanozturk.mvvmlivenews.model.News;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -52,9 +49,6 @@ public class NewsViewModel extends ViewModel implements Callback<ResponseModel> 
 
         Call<ResponseModel> call = newsAPI.loadChanges("tr","588ca767d0ad4629b5d3b06d21e4c028");
         call.enqueue(this);
-
-        //populateList();
-
     }
 
     @Override

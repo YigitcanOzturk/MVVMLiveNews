@@ -1,7 +1,6 @@
-package com.yigitcanozturk.mvvmlivenews;
+package com.yigitcanozturk.mvvmlivenews.model;
 
 import com.google.gson.annotations.SerializedName;
-import com.yigitcanozturk.mvvmlivenews.model.News;
 
 import java.util.ArrayList;
 
