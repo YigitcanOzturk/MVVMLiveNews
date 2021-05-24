@@ -51,11 +51,7 @@ public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         viewHolder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!TextUtils.isEmpty(news.getUrl())) {
-                    Intent webActivity = new Intent(context, WebActivity.class);
-                    webActivity.putExtra("url", news.getUrl());
-                    context.startActivity(webActivity);
-                }
+                context.startActivity(new Intent(context, WebActivity.class).putExtra("url", news.getUrl()));
             }
         });
     }
